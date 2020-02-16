@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Les Date en JavaScript</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Les date en JavaScripte</h1>
+    <script>
+        // méthode pour affiché la date dur jour
+        var datelit= Date();        // date de type litérale
+        var datems= Date.now();     // date en milliseconde
+        alert("Date de type litérale : "   +datelit +
+              '\nDate en millisecondes : '+datems);
+        alert(typeof(datelit) + '\n'+ typeof(datems));
+        
+        // Date de type objet
+        var dateob= new Date();
+        alert('Type de caractére : '+typeof(dateob)+ '\n'+
+              "la date d'aujourd'hui : "+dateob);
+        
+        // d'autre magnière d'écrir une date en JS
+        var d1= new Date (2019,11,07,16,58,00,110);//en JS le mois de janvier=0 donc le 11 ici c'est le mois de décemebre
+        var d2= new Date (2019,11,07);
+        alert("La date D1 : "+d1+
+              "\nLa date D2 : "+d2);
+        
+        //Date de format ISO
+        var dateiso1= new Date("2019-12-07");
+        var dateiso2 = new Date("2019-12-07T17:26:00");
+        alert("Date de type iso1: "+dateiso1+
+              "\nDate de type iso2: "+dateiso2);
+        
+        //Date de format courte ou longue
+        var datecourt= new Date("12/07/2019");
+        var datelong= new Date('December 07 2019 17:30:00');
+        alert("Date de type courte: "+datecourt+
+              "\nDate de type longue: "+datelong);
+        
+        //Date de type complete
+        var dcomplet= new Date("Sat Dec 07 2019 17:38:00 GMT+0100");
+        alert("Type de date complete : "+dcomplet);
+        
+        // Les méthode de type getter (get = obtenir)
+        var d = new Date();
+        var dms = d.getTime();
+        var dy = d.getFullYear();
+        var dmo = d.getMonth() +1; // car le mois de Janvier = 0 donc on +1 pour ne pas faire d'erreur du mois
+        var ddate = d.getDate();
+        
+        var dh = d.getHours();
+        var dmi = d.getMinutes();
+        var ds = d.getSeconds();
+        var dMs = d.getMilliseconds();
+        
+        alert("Nous somme le : " + ddate + "/" + dmo+
+              '/' +dy+ '/' + dms +
+              '\nIl est actuellement '+ dh+':'+dmi+':'
+              +ds+':'+dMs);
+        
+        //Méthode de type setter (set = ensemble)
+        var d = new Date();
+        d.setFullYear(2019,11,07);
+        d.setHours(18);
+        d.setMinutes(30);
+        d.setSeconds(15);
+        
+        alert("Date défini avec la méthode set : "+d);
+        // méthode des tableaux pour écrir des date en français
+        var d = new Date();
+        
+        var dy = d.getFullYear();
+        var dmo = d.getMonth();
+        var ddaye = d.getDay();
+        var ddate = d.getDate();
+        var dh = d.getHours();
+        var dm = d.getMinutes();
+        var ds = d.getSeconds();
+        
+        var mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+        var jour = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+        
+        alert('On est le ' + jour[ddaye] + ' '+ddate + ' '+ mois[dmo]+' '+
+              dy + ' \il est : ' + dh+ 'h '+dm+ 'm '+ds+ 's');
+        
+        
+    </script>
+
+
+</body>
+</html>
